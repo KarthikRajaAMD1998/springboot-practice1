@@ -33,6 +33,7 @@ public class FormController {
 	}
 	@PutMapping("/delete/{formId}")
 	public ResponseEntity<MyResponse> deleteContent(@PathVariable("formId") int formId) {
+		System.out.println("delete Mapping");
 		MyResponse res= formService.deleteForm(formId);
 		return ResponseEntity.status(res.getStatus()).body(res);
 	}
